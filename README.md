@@ -4,8 +4,8 @@ An AI-powered web application that analyzes blood test reports using Google's Ge
 
 ## Live Demo
 
-Application: [<STREAMLIT_APP_URL>](https://ai-blood-report-analyzer-kfexwrzpzzoc7dsjypseoq.streamlit.app/)
-Repository: [<GITHUB_REPOSITORY_URL>](https://github.com/Yashasvi-Y/ai-blood-report-analyzer.git)
+Application: [STREAMLIT_APP_URL](https://ai-blood-report-analyzer-kfexwrzpzzoc7dsjypseoq.streamlit.app/)
+Repository: [GITHUB_REPOSITORY_URL](https://github.com/Yashasvi-Y/ai-blood-report-analyzer.git)
 
 ---
 
@@ -91,16 +91,16 @@ ai-blood-report-analyzer/
 
 ### Blood Report Analysis
 
-> ![Report Analysis](AI_BloodReportAnalyzer_Analysis)
-> ![Extracted Preview](AI_BloodReportAnalyzer_Extracted_Preview)
+> ![Report Analysis](assets/AI_BloodReportAnalyzer_Analysis)
+> ![Extracted Preview](assets/AI_BloodReportAnalyzer_Extracted_Preview)
 
 
 ---
 
 ### Invalid Document Detection
 
-> ![Invalid file-size](AI_BloodReportAnalyzer_large_size)
-> ![Invalid file](AI_BloodReportAnalyzer_Invalid_Document)
+> ![Invalid file-size](assets/AI_BloodReportAnalyzer_large_size)
+> ![Invalid file](assets/AI_BloodReportAnalyzer_Invalid_Document)
 
 ---
 
