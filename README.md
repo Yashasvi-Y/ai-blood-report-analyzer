@@ -84,23 +84,24 @@ ai-blood-report-analyzer/
 
 ### Home Screen
 
-> ![Light Mode](assets/AI_BloodReportAnalyzer_Home_light)
-> ![Dark Mode](assets/AI_BloodReportAnalyzer_Home_dark)
+> ![Light Mode](assets/AI_BloodReportAnalyzer_Home_light.png)
+> ![Dark Mode](assets/AI_BloodReportAnalyzer_Home_dark.png)
 
 ---
 
 ### Blood Report Analysis
 
-> ![Report Analysis](AI_BloodReportAnalyzer_Analysis)
-> ![Extracted Preview](AI_BloodReportAnalyzer_Extracted_Preview)
+> ![Report Analysis](AI_BloodReportAnalyzer_Analysis.png)
+> ![Extracted Preview](AI_BloodReportAnalyzer_Extracted_Preview.png)
+> 
 
 
 ---
 
 ### Invalid Document Detection
 
-> ![Invalid file-size](AI_BloodReportAnalyzer_large_size)
-> ![Invalid file](AI_BloodReportAnalyzer_Invalid_Document)
+> ![Invalid file-size](AI_BloodReportAnalyzer_large_size.png)
+> ![Invalid file](AI_BloodReportAnalyzer_Invalid_Document.png)
 
 ---
 
