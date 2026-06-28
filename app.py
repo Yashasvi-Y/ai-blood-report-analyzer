@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 import pdfplumber
+from reportlab.platypus import SimpleDocTemplate, Paragraph
+from reportlab.lib.styles import getSampleStyleSheet
 
 load_dotenv()
 
@@ -15,6 +17,73 @@ def extract_text_from_pdf(uploaded_file):
                 text += page_text + "\n"
 
     return text.strip()
+
+def generate_pdf(
+    health_summary,
+    diet_plan,
+    extracted_values,
+    total_tests,
+    normal_count,
+    high_count,
+    low_count
+):
+
+    from io import BytesIO
+
+    buffer = BytesIO()
+
+    doc = SimpleDocTemplate(buffer)
+
+    styles = getSampleStyleSheet()
+
+    story = []
+
+    story.append(Paragraph("<b>AI BLOOD REPORT ANALYSIS</b>", styles["Title"]))
+    story.append(Paragraph("<br/>", styles["Normal"]))
+
+    story.append(Paragraph("<b>Health Summary</b>", styles["Heading2"]))
+    story.append(Paragraph(health_summary.replace("\n", "<br/>"), styles["BodyText"]))
+
+    story.append(Paragraph("<br/>", styles["Normal"]))
+
+    story.append(Paragraph("<b>Report Statistics</b>", styles["Heading2"]))
+    story.append(
+        Paragraph(
+            f"""
+            Tests Detected : {total_tests}<br/>
+            Normal : {normal_count}<br/>
+            High : {high_count}<br/>
+            Low : {low_count}
+            """,
+            styles["BodyText"],
+        )
+    )
+
+    story.append(Paragraph("<br/>", styles["Normal"]))
+
+    story.append(Paragraph("<b>Suggested Diet Plan</b>", styles["Heading2"]))
+    story.append(
+        Paragraph(
+            diet_plan.replace("\n", "<br/>"),
+            styles["BodyText"],
+        )
+    )
+
+    story.append(Paragraph("<br/>", styles["Normal"]))
+
+    story.append(Paragraph("<b>Extracted Blood Values</b>", styles["Heading2"]))
+    story.append(
+        Paragraph(
+            extracted_values.replace("\n", "<br/>"),
+            styles["BodyText"],
+        )
+    )
+
+    doc.build(story)
+
+    buffer.seek(0)
+
+    return buffer
 
 st.set_page_config(page_title="Blood Work Analyzer", layout="wide")
 
@@ -193,32 +262,20 @@ Blood Work Analysis:
                     unsafe_allow_html=True
                 )
 
-                download_content = f"""
-                AI BLOOD REPORT ANALYSIS
-
-                ========================
-                HEALTH SUMMARY
-                ========================
-
-                {health_summary}
-
-                ========================
-                DIET PLAN
-                ========================
-
-                {diet_plan if diet_plan else full_response}
-
-                ========================
-                EXTRACTED BLOOD VALUES
-                ========================
-
-                {extracted_values}
-                """
+                pdf_file = generate_pdf(
+                    health_summary,
+                    diet_plan if diet_plan else full_response,
+                    extracted_values,
+                    total_tests,
+                    normal_count,
+                    high_count,
+                    low_count
+                )
 
                 st.download_button(
-                    label="Download Analysis Report",
-                    data=download_content,
-                    file_name="blood_report_analysis.txt",
-                    mime="text/plain",
+                    label="Download Analysis Report (PDF)",
+                    data=pdf_file,
+                    file_name="blood_report_analysis.pdf",
+                    mime="application/pdf",
                     use_container_width=True
                 )
