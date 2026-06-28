@@ -179,9 +179,9 @@ Blood Work Analysis:
                     ### Report Statistics
 
                     - **Tests Detected:** {total_tests}
-                    - 🟢 **Normal:** {normal_count}
-                    - 🟡 **High:** {high_count}
-                    - 🔴 **Low:** {low_count}
+                    - **Normal:** {normal_count}
+                    - **High:** {high_count}
+                    - **Low:** {low_count}
                     """
                 )
                 health_box.markdown(
@@ -216,7 +216,7 @@ Blood Work Analysis:
                 """
 
                 st.download_button(
-                    label="📄 Download Analysis Report",
+                    label="Download Analysis Report",
                     data=download_content,
                     file_name="blood_report_analysis.txt",
                     mime="text/plain",
