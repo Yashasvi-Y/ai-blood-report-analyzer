@@ -91,8 +91,8 @@ ai-blood-report-analyzer/
 
 ### Blood Report Analysis
 
-> ![Report Analysis](AI_BloodReportAnalyzer_Analysis.png)
-> ![Extracted Preview](AI_BloodReportAnalyzer_Extracted_Preview.png)
+> ![Report Analysis](assets/AI_BloodReportAnalyzer_Analysis.png)
+> ![Extracted Preview](assets/AI_BloodReportAnalyzer_Extracted_Preview.png)
 > 
 
 
@@ -100,8 +100,8 @@ ai-blood-report-analyzer/
 
 ### Invalid Document Detection
 
-> ![Invalid file-size](AI_BloodReportAnalyzer_large_size.png)
-> ![Invalid file](AI_BloodReportAnalyzer_Invalid_Document.png)
+> ![Invalid file-size](assets/AI_BloodReportAnalyzer_large_size.png)
+> ![Invalid file](assets/AI_BloodReportAnalyzer_Invalid_Document.png)
 
 ---
 
